@@ -31,6 +31,9 @@ app.use(
   })
 );
 
+app.use('/api', userRouter);
+app.use('/api', authRouter);
+
 function runServer(port = PORT) {
   const server = app
     .listen(port, () => {
