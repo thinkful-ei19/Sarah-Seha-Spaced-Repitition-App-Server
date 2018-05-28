@@ -1,19 +1,22 @@
 [
     {
         "_id": "333333333333333333333300",
-        "fullname": "User Zero",
+        "firstname": "User Zero",
+        "lastname": "User L",
         "username": "user0",
         "password": "$2a$10$Cwa9s9HuarDN8h2/pd2WGOHuuAoPZmQQ5Ha8rYfMVPdoXIo1mppfa"
     },
     {
         "_id": "333333333333333333333301",
-        "fullname": "User One",
+        "firstname": "User One",
+        "lastname": "User LL",
         "username": "user1",
         "password": "$2a$10$Cwa9s9HuarDN8h2/pd2WGOHuuAoPZmQQ5Ha8rYfMVPdoXIo1mppfa"
     },
     {
         "_id": "333333333333333333333302",
-        "fullname": "User Two",
+        "firstname": "User Two",
+        "lastname": "User LLL",
         "username": "user2",
         "password": "$2a$10$Cwa9s9HuarDN8h2/pd2WGOHuuAoPZmQQ5Ha8rYfMVPdoXIo1mppfa"
     }
