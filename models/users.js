@@ -19,9 +19,18 @@ const userSchema = mongoose.Schema({
   },
   lastName: {
     type: String,
-  },
-  questions: {
-    type: Object
+  }
+  // questions: {
+  //   type: Object
+  // }
+});
+
+userSchema.set('toObject', {
+  transform: function (doc, ret) {
+    ret.id = ret._id;
+    delete ret._id;
+    delete ret.__v;
+    delete ret.password;
   }
 });
 
