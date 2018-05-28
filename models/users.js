@@ -1,10 +1,10 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   fullname: {
     type: String
   },
@@ -22,14 +22,6 @@ const userSchema = new Schema({
   }
 });
 
-userSchema.methods.validatePassword = function (password) {
-  return bcrypt.compare(password, this.password);
-};
-
-userSchema.statics.hashPassword = function (password) {
-  return bcrypt.hash(password, 10);
-};
-
 userSchema.set('toObject', {
   transform: function (doc, ret) {
     ret.id = ret._id;
@@ -38,6 +30,14 @@ userSchema.set('toObject', {
     delete ret.password;
   }
 });
+
+userSchema.methods.validatePassword = function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+userSchema.statics.hashPassword = function (password) {
+  return bcrypt.hash(password, 10);
+};
 
 const User = mongoose.model('User', userSchema);
 

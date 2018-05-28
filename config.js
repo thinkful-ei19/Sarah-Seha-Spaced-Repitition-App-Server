@@ -9,7 +9,7 @@ module.exports = {
         process.env.DATABASE_URL || 'mongodb://localhost/space-repetition-app',
   TEST_DATABASE_URL:
         process.env.TEST_DATABASE_URL ||
-        'mongodb://localhost/space-repetition-app'
+        'mongodb://localhost/space-repetition-app-test'
 //   DATABASE_URL:
 //       process.env.DATABASE_URL || 'postgres://localhost/thinkful-backend',
 //   TEST_DATABASE_URL:
