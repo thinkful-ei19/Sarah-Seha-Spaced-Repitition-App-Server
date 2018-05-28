@@ -21,6 +21,12 @@ const authRouter = require('./routes/auth');
 const app = express();
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN
+  })
+);
+
 //call on passport for user authentication
 passport.use(localStrategy);
 passport.use(jwtStrategy);
@@ -31,11 +37,7 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN
-  })
-);
+
 
 app.use('/api', userRouter);
 app.use('/api', authRouter);
