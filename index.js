@@ -19,6 +19,11 @@ const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 
 const app = express();
+app.use(express.json());
+
+//call on passport for user authentication
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 app.use(
   morgan(process.env.NODE_ENV === 'production' ? 'common' : 'dev', {

@@ -8,6 +8,7 @@ const router = express.Router();
 
 //POST endpoint for Usernodemon
 router.post('/users', (req, res, next) => {
+  console.log(req.body);
 
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
