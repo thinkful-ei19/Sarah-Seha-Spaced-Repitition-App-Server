@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 require('dotenv').config();
 
+
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 
@@ -17,6 +18,7 @@ const jwtStrategy = require('./auth/jwt');
 
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const questionsRouter = require('./routes/questions');
 
 const app = express();
 app.use(express.json());
@@ -37,10 +39,9 @@ app.use(
   })
 );
 
-
-
 app.use('/api', userRouter);
 app.use('/api', authRouter);
+app.use('/api', questionsRouter);
 
 function runServer(port = PORT) {
   const server = app
