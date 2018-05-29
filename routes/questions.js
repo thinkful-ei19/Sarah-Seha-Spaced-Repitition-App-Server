@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const Question = require('../models/questions');
 
 
+
 router.get('/questions', (req, res, next) => {
   Question.find()
     .then(results => {
