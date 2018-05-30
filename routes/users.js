@@ -3,6 +3,8 @@ const express = require('express');
 
 const User = require('../models/users');
 
+const { buildLinkedList } = require('../linkedList');
+
 
 const router = express.Router();
 
@@ -73,6 +75,7 @@ router.post('/users', (req, res, next) => {
   //Create new linked list for specific user
   let questions = new LinkedList
   //add call to build list
+  buildLinkedList(questions);
 
   // Username and password were validated as pre-trimmed
   let { username, password, firstname, lastname = '' } = req.body;
@@ -85,7 +88,8 @@ router.post('/users', (req, res, next) => {
         username,
         password: digest,
         firstname,
-        lastname
+        lastname,
+        questions
       };
       return User.create(newUser);
     })
