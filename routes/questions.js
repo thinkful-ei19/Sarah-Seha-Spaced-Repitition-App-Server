@@ -43,7 +43,7 @@ router.post('/questions', jwtAuth, (req, res, next) => {
     result.totalTries = questions.head.value.totalTries;
     result.correctTries = questions.head.value.correctTries;
     result.answer = questions.head.value.answer
-    if(answer2.questions.head.value.answer === res.body.aswer) { 
+    if(answer2.questions.head.value.answer === res.body.answer) { 
       questions = updatePosition(questions, questions.head.value.mValue*2) {
       result.correctTries++;
         result.totalTries++;
