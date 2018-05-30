@@ -150,16 +150,24 @@ class LinkedList {
 
 //helper functions to build lists, insert 
 //updates position
-function updatePosition(linkedList, mValue) {
-  
+function updatePosition(list, mValueNew) {
+  list.head.value.mValue = mValueNew;
+  list.head.value.totalTries ++;
+  if (mValueNew !==1 ) {
+    list.head.value.correctTries ++;
+  }
+  list.insertAt(mValueNew, list.head.value);
+  list.head = list.next;
+
+  return list;
 }
 //builds our list
-function buildLinkedList(linkedList) {
+function buildLinkedList(newList) {
   questions.forEach(tool => {
     tool.totalTries = 0;
     tool.correctTries = 0;
     tool.mValue = 1;
-    linkedList.insertLast(tool);
+    newList.insertLast(tool);
   });
   return LinkedList;
 }
@@ -190,7 +198,7 @@ function buildLinkedList(linkedList) {
 
 
 
-module.exports = LinkedList, buildLinkedList;
+module.exports = LinkedList, updatePosition, buildLinkedList;
 
 
 

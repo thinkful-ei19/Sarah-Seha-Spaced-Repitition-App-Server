@@ -11,6 +11,7 @@ const passport = require('passport');
 const LinkedList = require('../linkedList');
 //const { JWT_SECRET, JWT_EXPIRY } = require('../config');
 const seedData = require('../db/seed/questions.json');
+const {updatePosition} = require('../linkedList');
 
 const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
 
@@ -43,10 +44,17 @@ router.post('/questions', jwtAuth, (req, res, next) => {
     result.correctTries = questions.head.value.correctTries;
     result.answer = questions.head.value.answer
     if(answer2.questions.head.value.answer === res.body.aswer) { 
-      questions = updatePosition(questions) {
-      answers.correct++; } else { anwers.correct++; } })
+      questions = updatePosition(questions, questions.head.value.mValue*2) {
+      result.correctTries++;
+        result.totalTries++;
+        }
+      } else { 
+      questions = updatePosition(questions, 1);
+      result.feedback = 'Sorry try again';
+      result.totalTries++;
+     } 
 
-  const{id}=req.params; const{image, answer} = req.body;
+  // const{id}=req.params; const{image, answer} = req.body;
   //if same then increment both totalTries, correctTries +1, set mValue *2, call updatePosition helper function.
 
   //if it
@@ -54,7 +62,8 @@ router.post('/questions', jwtAuth, (req, res, next) => {
   // const { question, answer } = req.body;
   // const newItem = { question, answer };
 
-  return User.findByIdAndUpdate(req.user.id, { $set: {questions}})
+  return User.findByIdAndUpdate(req.user.id, { $set: {questions}});
+    })
     .then((result) => {
       res.location(`${req.originalUrl}/${result.id}`).status(201).json(result);
     })
