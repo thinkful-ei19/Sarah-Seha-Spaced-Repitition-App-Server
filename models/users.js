@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  questions: {type: Object}
 });
 
 userSchema.set('toObject', {
