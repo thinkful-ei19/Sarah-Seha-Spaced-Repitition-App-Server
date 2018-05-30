@@ -12,6 +12,7 @@ router.get('/questions', (req, res, next) => {
   Question.find()
     .then(results => {
       res.json(results);
+      console.log(res.json(results));
     }).catch(err => {
       console.log('Error from find', err);
       next(err);
