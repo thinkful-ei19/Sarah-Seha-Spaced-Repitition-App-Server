@@ -157,6 +157,7 @@ function updatePosition(list, mValueNew) {
     list.head.value.correctTries ++;
   }
   list.insertAt(mValueNew, list.head.value);
+  //need to add logic to insertAt if nth position is greater than list length
   list.head = list.next;
 
   return list;

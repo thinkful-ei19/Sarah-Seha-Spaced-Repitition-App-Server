@@ -38,31 +38,30 @@ router.post('/questions', jwtAuth, (req, res, next) => {
   User.findById(req.user.id)
   //then get questions object
   //compare the req.body to the questions.head.value.answer
-  .then(answer2 => { 
-    let questions = answer2.questions;
-    result.totalTries = questions.head.value.totalTries;
-    result.correctTries = questions.head.value.correctTries;
-    result.answer = questions.head.value.answer
-    if(answer2.questions.head.value.answer === res.body.answer) { 
-      questions = updatePosition(questions, questions.head.value.mValue*2) {
-      result.correctTries++;
+    .then(answer2 => { 
+      let questions = answer2.questions;
+      result.totalTries = questions.head.value.totalTries;
+      result.correctTries = questions.head.value.correctTries;
+      result.answer = questions.head.value.answer
+      if(answer2.questions.head.value.answer === res.body.answer) { 
+        questions = updatePosition(questions, questions.head.value.mValue*2);
+        result.correctTries++;
         result.totalTries++;
-        }
       } else { 
-      questions = updatePosition(questions, 1);
-      result.feedback = 'Sorry try again';
-      result.totalTries++;
-     } 
+        questions = updatePosition(questions, 1);
+        result.feedback = 'Sorry try again';
+        result.totalTries++;
+      } 
 
-  // const{id}=req.params; const{image, answer} = req.body;
-  //if same then increment both totalTries, correctTries +1, set mValue *2, call updatePosition helper function.
+      // const{id}=req.params; const{image, answer} = req.body;
+      //if same then increment both totalTries, correctTries +1, set mValue *2, call updatePosition helper function.
 
-  //if it
+      //if it
 
-  // const { question, answer } = req.body;
-  // const newItem = { question, answer };
+      // const { question, answer } = req.body;
+      // const newItem = { question, answer };
 
-  return User.findByIdAndUpdate(req.user.id, { $set: {questions}});
+      return User.findByIdAndUpdate(req.user.id, { $set: {questions}});
     })
     .then((result) => {
       res.location(`${req.originalUrl}/${result.id}`).status(201).json(result);
