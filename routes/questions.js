@@ -27,10 +27,34 @@ router.get('/questions', (req, res, next) => {
 
 
 router.post('/questions', jwtAuth, (req, res, next) => {
-  const { question, answer } = req.body;
-  const newItem = { question, answer };
+  let result = {
+    feedback: 'You got it!',
+    totalTries: 0,
+    correctTries: 0
+  };
+  
+  //first find user by id
+  User.findById(req.user.id)
+  //then get questions object
+  //compare the req.body to the questions.head.value.answer
+  .then(answer2 => { 
+    let questions = answer2.questions;
+    result.totalTries = questions.head.value.totalTries;
+    result.correctTries = questions.head.value.correctTries;
+    result.answer = questions.head.value.answer
+    if(answer2.questions.head.value.answer === res.body.aswer) { 
+      questions = updatePosition(questions) {
+      answers.correct++; } else { anwers.correct++; } })
 
-  Question.create(newItem)
+  const{id}=req.params; const{image, answer} = req.body;
+  //if same then increment both totalTries, correctTries +1, set mValue *2, call updatePosition helper function.
+
+  //if it
+
+  // const { question, answer } = req.body;
+  // const newItem = { question, answer };
+
+  return User.findByIdAndUpdate(req.user.id, { $set: {questions}})
     .then((result) => {
       res.location(`${req.originalUrl}/${result.id}`).status(201).json(result);
     })

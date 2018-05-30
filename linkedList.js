@@ -150,6 +150,9 @@ class LinkedList {
 
 //helper functions to build lists, insert 
 //updates position
+function updatePosition(linkedList, mValue) {
+  
+}
 //builds our list
 function buildLinkedList(linkedList) {
   questions.forEach(tool => {
@@ -165,6 +168,24 @@ function buildLinkedList(linkedList) {
 // if the answer is correct meant true
 // M value * 2 
 //else M value = 1
+
+// User.findById(userId)
+//     .select('questions')
+//     .then((result) => {
+//       let questionList = new LinkedList();
+//       let questionPointer = result.questions.head;
+//       while(questionPointer !== null) {
+//         questionList.insertLast(questionPointer.value);
+//         questionPointer =questionPointer.next;
+//       }
+//       questionList.haveMvalue(true);
+//       return User.updateOne({_id:userId}, {$set:{'questions': questionList}})
+//         .then(value => {
+//           res.status(204).json(value);
+//         });
+//     })
+//     .catch(err => next(err));
+// });
 
 
 
