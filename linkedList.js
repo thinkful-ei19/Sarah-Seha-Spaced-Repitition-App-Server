@@ -169,7 +169,7 @@ function buildLinkedList(linkedList) {
 
 
 
-module.exports = LinkedList;
+module.exports = LinkedList, buildLinkedList;
 
 
 
