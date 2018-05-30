@@ -70,6 +70,9 @@ router.post('/users', (req, res, next) => {
     err.status = 422;
     return next(err);
   }
+  //Create new linked list for specific user
+  let questions = new LinkedList
+  //add call to build list
 
   // Username and password were validated as pre-trimmed
   let { username, password, firstname, lastname = '' } = req.body;

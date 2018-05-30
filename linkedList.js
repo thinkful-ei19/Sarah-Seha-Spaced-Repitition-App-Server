@@ -1,4 +1,6 @@
 'use strict';
+const questions = require('./db/seed/questions');
+
 class _Node {
   constructor(value, next) {
     this.value = value,
@@ -143,6 +145,20 @@ class LinkedList {
   
     return this.insertAt(currQuestion.value.Mvalue, currQuestion.value);
   }
+}
+
+
+//helper functions to build lists, insert 
+//updates position
+//builds our list
+function buildLinkedList(linkedList) {
+  questions.forEach(tool => {
+    tool.totalTries = 0;
+    tool.correctTries = 0;
+    tool.mValue = 1;
+    linkedList.insertLast(tool);
+  });
+  return LinkedList;
 }
 
 // M value??
