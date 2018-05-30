@@ -126,6 +126,23 @@ class LinkedList {
     //found it
     return currNode;
   }
+  removeFirst() {
+    return this.head = this.head.next;
+  }
+
+
+  haveMvalue(correct) {
+    let currQuestion = this.head;
+    if(correct == true){
+      currQuestion.value.Mvalue = currQuestion.value.Mvalue * 2;
+    }
+    else{
+      currQuestion.value.Mvalue = 1;
+    }
+    this.removeFirst();
+  
+    return this.insertAt(currQuestion.value.Mvalue, currQuestion.value);
+  }
 }
 
 // M value??
