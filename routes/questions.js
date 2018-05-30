@@ -19,7 +19,7 @@ router.get('/questions', (req, res, next) => {
   Question.find()
     .then(results => {
       res.json(results);
-      console.log(res.json(results));
+      // console.log(res.json(results));
     }).catch(err => {
       console.log('Error from find', err);
       next(err);
@@ -42,8 +42,8 @@ router.post('/questions', jwtAuth, (req, res, next) => {
       let questions = answer2.questions;
       result.totalTries = questions.head.value.totalTries;
       result.correctTries = questions.head.value.correctTries;
-      result.answer = questions.head.value.answer
-      if(answer2.questions.head.value.answer === res.body.answer) { 
+      result.answer = questions.head.value.answer;
+      if(answer2.questions.head.value.answer === req.body.answer) { 
         questions = updatePosition(questions, questions.head.value.mValue*2);
         result.correctTries++;
         result.totalTries++;

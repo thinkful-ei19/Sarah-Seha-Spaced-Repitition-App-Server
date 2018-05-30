@@ -148,7 +148,24 @@ class LinkedList {
 }
 
 
-//helper functions to build lists, insert 
+//helper functions to build lists, insert
+function insertAt(mValue, list) {
+  //find the nth position (mValue) node is WHERE we want to insert
+  let node = list.head;
+  for (let i = 0; i < mValue; i++) {
+    if(!node.next) {
+      break;
+    }
+    node = node.next;
+  }
+  //curr nth position next: will point at the insertItem, insertItem next: will point at nth position -1,  
+  //need to add logic to insertAt if nth position is greater than list length
+  const insertItem = list.head;
+  list.head = list.head.next;
+  insertItem.next = node.next;
+  node.next = insertItem;
+  return list;
+}
 //updates position
 function updatePosition(list, mValueNew) {
   list.head.value.mValue = mValueNew;
@@ -156,11 +173,7 @@ function updatePosition(list, mValueNew) {
   if (mValueNew !==1 ) {
     list.head.value.correctTries ++;
   }
-  list.insertAt(mValueNew, list.head.value);
-  //need to add logic to insertAt if nth position is greater than list length
-  list.head = list.next;
-
-  return list;
+  return insertAt(mValueNew, list);
 }
 //builds our list
 function buildLinkedList(newList) {
@@ -170,7 +183,7 @@ function buildLinkedList(newList) {
     tool.mValue = 1;
     newList.insertLast(tool);
   });
-  return LinkedList;
+  return newList;
 }
 
 // M value??
@@ -178,28 +191,7 @@ function buildLinkedList(newList) {
 // M value * 2 
 //else M value = 1
 
-// User.findById(userId)
-//     .select('questions')
-//     .then((result) => {
-//       let questionList = new LinkedList();
-//       let questionPointer = result.questions.head;
-//       while(questionPointer !== null) {
-//         questionList.insertLast(questionPointer.value);
-//         questionPointer =questionPointer.next;
-//       }
-//       questionList.haveMvalue(true);
-//       return User.updateOne({_id:userId}, {$set:{'questions': questionList}})
-//         .then(value => {
-//           res.status(204).json(value);
-//         });
-//     })
-//     .catch(err => next(err));
-// });
-
-
-
-
-module.exports = LinkedList, updatePosition, buildLinkedList;
+module.exports = {LinkedList: LinkedList, updatePosition, buildLinkedList};
 
 
 

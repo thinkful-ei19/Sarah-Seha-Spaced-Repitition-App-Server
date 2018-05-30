@@ -2,25 +2,17 @@
     {
         "image": "https://img-new.cgtrader.com/items/146819/ff211fc01a/wooden-rolling-pin-3d-model-obj-3ds-fbx-c4d.jpg",
         "answer": "rolling pin",
-        "id": "5b0c806b1fbe72d0b66fcb85",
-        "mValue": 1,
-        "nextQuestion":"5b0c806b1fbe72d0b66fcb86",
-        "head": true
+        "id": "5b0c806b1fbe72d0b66fcb85"
     },
     {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRTxQDvGRtcVrogSuLL5cKeVB16Kb5UcFGbc2ldqX1bTJD_1ArTQ",
         "answer": "stand mixer",
-        "id": "5b0c806b1fbe72d0b66fcb86",
-        "mValue": 1,
-        "nextQuestion":"5b0c806b1fbe72d0b66fcb87",
-        "head": false
+        "id": "5b0c806b1fbe72d0b66fcb86"
     },
     {
         "image": "http://gahomefavor.com/u_file/1612/products/10/bfa0f921d9.jpg",
         "answer": "spatula",
-        "id": "5b0c806b1fbe72d0b66fcb87",
-        "mValue": 1,
-        "nextQuestion":"no question"
+        "id": "5b0c806b1fbe72d0b66fcb87"
     }
 ]
 

@@ -4,7 +4,7 @@ const express = require('express');
 const User = require('../models/users');
 
 //import linkedListed class and build function
-const LinkedList = require('../linkedList');
+const { LinkedList } = require('../linkedList');
 const { buildLinkedList } = require('../linkedList');
 
 
