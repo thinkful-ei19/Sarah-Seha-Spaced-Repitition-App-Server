@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chai-spies": "^1.0.0",
     "cors": "^2.8.4",
     "cross-env": "^5.1.6",
     "dotenv": "^5.0.1",
