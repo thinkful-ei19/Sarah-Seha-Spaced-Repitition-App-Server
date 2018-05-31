@@ -1,12 +1,10 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const passport = require('passport');
-require('dotenv').config();
-
-
 
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
@@ -14,9 +12,6 @@ const { dbConnect } = require('./db-mongoose');
 
 const localStrategy = require('./auth/local-strategy');
 const jwtStrategy = require('./auth/jwt');
-
-
-//import routers
 
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
