@@ -2,8 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-//const bodyParser = require('body-parser');
-//const jsonParser = bodyParser.json();
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 const jwt = require('jsonwebtoken');
 const User = require('../models/users');
 const Question = require('../models/questions');
@@ -15,17 +15,28 @@ const {updatePosition} = require('../linkedList');
 
 const jwtAuth = passport.authenticate('jwt', { session: false, failWithError: true });
 
-router.get('/questions', (req, res, next) => {
-  Question.find()
-    .then(results => {
-      res.json(results);
-      // console.log(res.json(results));
-    }).catch(err => {
-      console.log('Error from find', err);
+// router.get('/questions', (req, res, next) => {
+//   Question.find()
+//     .then(results => {
+//       res.json(results);
+//       // console.log(res.json(results));
+//     }).catch(err => {
+//       console.log('Error from find', err);
+//       next(err);
+//     });
+// });
+
+router.get('/questions', jwtAuth, (req, res, next) => {
+  User.findById(req.user.id)
+    .then(response => {
+      let result = response.questions.head.value;
+      console.log(result);
+      res.json(result);
+    })
+    .catch(err => {
       next(err);
     });
 });
-
 
 router.post('/questions', jwtAuth, (req, res, next) => {
   let result = {
@@ -33,6 +44,7 @@ router.post('/questions', jwtAuth, (req, res, next) => {
     totalTries: 0,
     correctTries: 0
   };
+  console.log(req.body);
   
   //first find user by id
   User.findById(req.user.id)
@@ -63,8 +75,9 @@ router.post('/questions', jwtAuth, (req, res, next) => {
 
       return User.findByIdAndUpdate(req.user.id, { $set: {questions}});
     })
-    .then((result) => {
-      res.location(`${req.originalUrl}/${result.id}`).status(201).json(result);
+    .then(() => {
+      res.json(result);
+      console.log(result);
     })
     .catch(err => {
       next(err);

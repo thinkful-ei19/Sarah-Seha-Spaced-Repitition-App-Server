@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   questions: {type: Object}
+ 
 });
 
 userSchema.set('toObject', {
