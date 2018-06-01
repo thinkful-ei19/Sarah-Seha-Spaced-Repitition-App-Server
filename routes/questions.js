@@ -64,7 +64,6 @@ router.post('/questions', jwtAuth, (req, res, next) => {
         result.feedback = 'Sorry try again';
         result.totalTries++;
       } 
-      
 
       // const{id}=req.params; const{image, answer} = req.body;
       //if same then increment both totalTries, correctTries +1, set mValue *2, call updatePosition helper function.
