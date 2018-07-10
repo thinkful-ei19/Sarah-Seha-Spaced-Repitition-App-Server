@@ -6,9 +6,10 @@ Cookese was created to learn useful kitchen tools! If the user gives right answe
 Cookese was implemented using linked list data structure to store the questions (pictures) in the database. When the user answers a question correctly the “memory value”, which is initialized as a value of 1, is doubled and that question moves m # of spaces back in the list. Otherwise, “memory value” will reset to 1 and the user will see that question again after the next question in queue. The better you get to know your kitchen tools the fewer times you will see a question!!
 Ready to get started?
 
-The deployed version of Cookese App: (https://ecstatic-hamilton-0a8f06.netlify.com/)
-Link client repository: (https://github.com/thinkful-ei19/Sarah-Seha-Spaced-Repitition-App-Server)
-Demo Account
+The deployed version of Cookese App: (https://ecstatic-hamilton-0a8f06.netlify.com/)<br />
+Link client repository: (https://github.com/thinkful-ei19/Sarah-Seha-Spaced-Repitition-App-Server)<br />
+
+<h3>Demo Account</h3>
 
 Username:demouser<br />
 Password:demodemo<br />
