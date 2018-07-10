@@ -1,46 +1,38 @@
-# Thinkful Backend Template
+#Cookese
 
-A template for developing and deploying Node.js apps.
+Welcome to Cookese!
+This app utilizes a spaced repetition algorithm designed to adapt to users learning needs.
+Cookese was created to learn useful kitchen tools! If the user gives right answers to the questions more often those questions will be asked later. If the user tends to give wrong will be asked sooner.
+Cookese was implemented using linked list data structure to store the questions (pictures) in the database. When the user answers a question correctly the “memory value”, which is initialized as a value of 1, is doubled and that question moves m # of spaces back in the list. Otherwise, “memory value” will reset to 1 and the user will see that question again after the next question in queue. The better you get to know your kitchen tools the fewer times you will see a question!!
+Ready to get started?
 
-## Getting started
+The deployed version of Cookese App: (https://ecstatic-hamilton-0a8f06.netlify.com/)
+Link client repository: (https://github.com/thinkful-ei19/Sarah-Seha-Spaced-Repitition-App-Server)
 
-### Setting up a project
+##Demo Account
 
-* Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
-* Clone this repository: `git clone https://github.com/Thinkful-Ed/backend-template YOUR_PROJECT_NAME`
-* Move into the project directory: `cd YOUR_PROJECT_NAME`
-* Install the dependencies: `npm install`
-* Create a new repo on GitHub: https://github.com/new
-    * Make sure the "Initialize this repository with a README" option is left unchecked
-* Update the remote to point to your GitHub repository: `git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME`
+Username:demouser<br />
+Password:demodemo<br />
+##Screenshots
+###About
+<img src="/images/aboutpage.png" alt="aboutpage" >
+###Register
+<img src="/images/registrationform.png" alt="registrationpage" >
+###Login
+<img src="/images/login.jpng" alt="loginpage" >
+###Question Feedback
+<img src="/images/feedback.png" alt="createtrip" >
 
-### Working on the project
+## Technologies Used
 
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Run the development task: `npm start`
-    * Starts a server running at http://localhost:8080
-    * Automatically restarts when any of your files change
+- Front End: React/Redux
 
-## Databases
+- Back End: Mongo/MLab/Express/Node
 
-By default, the template is configured to connect to a MongoDB database using Mongoose.  It can be changed to connect to a PostgreSQL database using Knex by replacing any imports of `db-mongoose.js` with imports of `db-knex.js`, and uncommenting the Postgres `DATABASE_URL` lines in `config.js`.
+- Testing: Enzyme/Mocha/Chai
 
-## Deployment
+- Deploy: Heroku-server/Netlify-client
 
-Requires the [Heroku CLI client](https://devcenter.heroku.com/articles/heroku-command-line).
+Collaborators
 
-### Setting up the project on Heroku
-
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Create the Heroku app: `heroku create PROJECT_NAME`
-
-* If your backend connects to a database, you need to configure the database URL:
-    * For a MongoDB database: `heroku config:set DATABASE_URL=mongodb://USERNAME:PASSWORD@HOST:PORT/DATABASE_NAME`
-    * For a PostgreSQL database: `heroku config:set DATABASE_URL=postgresql://USERNAME:PASSWORD@HOST:PORT/DATABASE_NAME`
-
-* If you are creating a full-stack app, you need to configure the client origin: `heroku config:set CLIENT_ORIGIN=https://www.YOUR_DEPLOYED_CLIENT.com`
-
-### Deploying to Heroku
-
-* Push your code to Heroku: `git push heroku master`
-# Sarah-Seha-Spaced-Repitition-App-Server
+@seguda, @ssheaks
