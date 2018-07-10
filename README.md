@@ -1,4 +1,4 @@
-#Cookese
+<h1>Cookese</h1>
 
 Welcome to Cookese!
 This app utilizes a spaced repetition algorithm designed to adapt to users learning needs.
@@ -8,8 +8,7 @@ Ready to get started?
 
 The deployed version of Cookese App: (https://ecstatic-hamilton-0a8f06.netlify.com/)
 Link client repository: (https://github.com/thinkful-ei19/Sarah-Seha-Spaced-Repitition-App-Server)
-
-##Demo Account
+Demo Account
 
 Username:demouser<br />
 Password:demodemo<br />
