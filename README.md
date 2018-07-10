@@ -12,17 +12,17 @@ Demo Account
 
 Username:demouser<br />
 Password:demodemo<br />
-##Screenshots
-###About
+<h2>Screenshots</h2>
+<h3>About</h3>
 <img src="/images/aboutpage.png" alt="aboutpage" >
-###Register
+<h3>Register</h3>
 <img src="/images/registrationform.png" alt="registrationpage" >
-###Login
-<img src="/images/login.jpng" alt="loginpage" >
-###Question Feedback
+<h3>Login</h3>
+<img src="/images/login.png" alt="loginpage" >
+<h3>Question Feedback</h3>
 <img src="/images/feedback.png" alt="createtrip" >
 
-## Technologies Used
+<h2>Technologies Used
 
 - Front End: React/Redux
 
